@@ -5,7 +5,6 @@ body {
     background-color: #f0f0f0;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    /* Removed padding-top: 50px; to remove space from the top */
     padding-bottom: 50px;
     min-height: 100vh;
 }
@@ -28,7 +27,7 @@ body {
 
 /* Left Panel: ALL Controls */
 #left-panel {
-    width: 350px; 
+    width: 400px; /* Increased from 350px to 400px for more space */
     padding: 10px; 
     flex-shrink: 0;
     display: flex;
@@ -123,10 +122,11 @@ body {
     margin-bottom: 10px; /* Separates option groups within the extra section */
 }
 
-/* Removing redundant margin-bottom for option groups within the extra section */
+/* Ensures the last group in the hidden section doesn't add extra space */
 #extraOptionsSection .option-group:last-child {
     margin-bottom: 0;
 }
+
 
 .option-group h3 {
     margin-top: 0;
@@ -151,15 +151,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* Custom layout for slider rows */
+.input-row.input-slider {
+    display: grid;
+    grid-template-columns: 130px 1fr 40px; /* Label | Slider | Value */
+    gap: 10px;
+    align-items: center;
+}
+
 .input-row label {
     font-weight: normal;
     color: #555;
-    width: 130px; 
     flex-shrink: 0;
+    width: auto; /* Allow grid to handle width */
 }
 
+/* Style for convergence sliders */
 #left-panel .input-row input[type="range"] {
-    width: 150px;
+    width: 150px; /* Default slider width */
+}
+
+/* Ensure sliders in the custom grid take up available space */
+.input-row.input-slider input[type="range"] {
+    width: 100%;
+    margin: 0;
 }
 
 .input-row input[type="number"] {
@@ -167,6 +182,13 @@ body {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    text-align: right;
+}
+
+.slider-value {
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
     text-align: right;
 }
 

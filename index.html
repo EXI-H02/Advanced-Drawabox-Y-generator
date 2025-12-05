@@ -12,13 +12,13 @@
             <button id="generateButton">GENERATE</button>
             
             <button id="extraOptionsButton">
-                Show Advanced Options <span id="arrow" class="arrow-down">&#9662;</span>
+                Show Options <span id="arrow" class="arrow-down">&#9662;</span>
             </button>
             
             <div id="extraOptionsSection" class="hidden">
                 
                 <div class="option-group">
-                    <h3>Customize edge length</h3>
+                    <h3>Customize edge length (for GENERATE button)</h3>
                     <div class="input-row">
                         <label for="minSizeInput">Min Length (1 - 400):</label>
                         <input type="number" id="minSizeInput" min="1" max="399" value="10">
@@ -31,7 +31,25 @@
 
                 <div class="option-group draw-box-group">
                     <h3>Draw the box</h3>
-                    <p class="desc-text">Convergence: 0 = Parallel, 1 = Vanishing Point at line end.</p>
+                    <p class="desc-text">Convergence: 0 = Parallel, 1 = Vanishing Point at line end. Adjusting the lengths below changes the drawn vectors.</p>
+                    
+                    <div class="input-row input-slider">
+                        <label>Length A (1 - 400):</label>
+                        <input type="range" id="lenASlider" min="1" max="400" step="1" value="10">
+                        <span id="lenAValue" class="slider-value">10</span>
+                    </div>
+
+                    <div class="input-row input-slider">
+                        <label>Length B (1 - 400):</label>
+                        <input type="range" id="lenBSlider" min="1" max="400" step="1" value="10">
+                        <span id="lenBValue" class="slider-value">10</span>
+                    </div>
+
+                    <div class="input-row input-slider">
+                        <label>Length C (1 - 400):</label>
+                        <input type="range" id="lenCSlider" min="1" max="400" step="1" value="10">
+                        <span id="lenCValue" class="slider-value">10</span>
+                    </div>
                     
                     <div class="input-row">
                         <label for="convA">Convergence A:</label>
