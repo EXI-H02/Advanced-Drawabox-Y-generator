@@ -1,0 +1,190 @@
+body {
+    display: flex;
+    justify-content: center; /* Ensures content is centered horizontally */
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    /* Removed padding-top: 50px; to remove space from the top */
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+/* New main layout container for two columns */
+#main-layout {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    width: fit-content; 
+    margin-left: auto;
+    margin-right: auto;
+    /* If the body is tall enough, this centers it vertically */
+    margin-top: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: white; 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Left Panel: ALL Controls */
+#left-panel {
+    width: 350px; 
+    padding: 10px; 
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+/* Right Panel: Canvas only */
+#right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vectorCanvas {
+    background-color: #ffffff; 
+    border: 1px solid #ccc;
+    display: block;
+}
+
+/* Generate Button Style (Text changed, but style remains) */
+#generateButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: rgb(50, 50, 200);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+#generateButton:hover {
+    background-color: rgb(70, 70, 220); 
+}
+
+/* Extra Options Button Style (text) */
+#extraOptionsButton {
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    border-radius: 5px;
+}
+
+#extraOptionsButton:hover {
+    background-color: #d0d0d0;
+    color: #000;
+}
+
+/* Arrow Style */
+#arrow {
+    margin-left: 5px;
+    font-size: 10px; 
+    line-height: 1; 
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when menu is open */
+.arrow-up {
+    transform: rotate(180deg);
+}
+
+
+/* --- General Option Group Styles --- */
+
+#extraOptionsSection {
+    margin-top: 0; 
+    padding: 0; 
+    border: none; 
+    width: 100%; 
+    background-color: transparent;
+}
+
+/* Class to hide section */
+.hidden {
+    display: none;
+}
+
+.option-group {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Separates option groups within the extra section */
+}
+
+/* Removing redundant margin-bottom for option groups within the extra section */
+#extraOptionsSection .option-group:last-child {
+    margin-bottom: 0;
+}
+
+.option-group h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.desc-text {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 0 10px 0;
+    font-style: italic;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-row label {
+    font-weight: normal;
+    color: #555;
+    width: 130px; 
+    flex-shrink: 0;
+}
+
+#left-panel .input-row input[type="range"] {
+    width: 150px;
+}
+
+.input-row input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: right;
+}
+
+/* Secondary Button (Draw Box) */
+.secondary-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.secondary-btn:hover {
+    background-color: #333;
+}
